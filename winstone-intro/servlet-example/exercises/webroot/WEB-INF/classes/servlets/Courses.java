@@ -41,7 +41,7 @@ public class Courses extends HttpServlet{
           .append(rs.getString("course_name"))
           .append("</li>\n");
       }
-        sb.append("</ul>\n")
+      sb.append("</ul>\n")
         .append("</body>\n")
         .append("</html>\n");
       out.println(sb.toString());
