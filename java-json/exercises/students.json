@@ -1,0 +1,24 @@
+{
+    "students":[
+        {
+            "studentName":"Anders Andersson",
+            "studentID":1
+        },
+        {
+            "studentName":"Beata Bengtsson",
+            "studentID":2
+        },
+        {
+            "studentName":"Charlie Christensen",
+            "studentID":3
+        },
+        {
+            "studentName":"Dick Dale",
+            "studentID":4
+        },
+        {
+            "studentName":"Edward Eriksson",
+            "studentID":5
+        }
+    ]
+}
