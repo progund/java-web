@@ -6,11 +6,11 @@ import org.json.*;
 public class JSONProducer{
   private File jsonFile;
   private PrintWriter writer;
-    
+
   public JSONProducer(String jsonFile){
     this.jsonFile = new File(jsonFile);
   }
-    
+
   // example method - shows how a json obj is created
   public void createAndWrite() throws IOException{
     try{
@@ -32,6 +32,24 @@ public class JSONProducer{
       writer = new PrintWriter(jsonFile);
       writer.println(json);
       writer.close();
+    }catch(JSONException e){
+      System.err.println("Error creating JSON: " + e.getMessage());
+    }
+  }
+}
+/*
+  // JSONObject is a builder, so put() and accumulate() returns "this":
+      JSONObject jo = new JSONObject();
+      jo.put("firstName","Hanky")
+        .put("lastName","Sandycleavage")
+        .put("age",65)
+        .put("streetAddress","Skidrow 88")
+        .put("State","VGR")
+        .put("postalCode","66613")
+        .accumulate("phoneNumbers", new JSONObject().put("Mobile", "08sdfs"))
+        .accumulate("phoneNumbers", new JSONObject().put("Home", "031.1231"));
+      String json = jo.toString(2); // indent steps: 2
+      */
     }catch(JSONException e){
       System.err.println("Error creating JSON: " + e.getMessage());
     }
