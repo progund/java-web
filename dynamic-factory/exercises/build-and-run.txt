@@ -1,0 +1,2 @@
+javac -cp .:org/henrikard/student/resources/javax.json.jar org/henrikard/student/*/*.java && java -cp .:org/henrikard/student/resources/javax.json.jar:org/henrikard/student/resources/sqlite-jdbc-3.8.11.2.jar -DformatsXML=formats.xml org.henrikard.student.main.Main json
+javac -cp .:org/henrikard/student/resources/javax.json.jar org/henrikard/student/*/*.java && java -cp .:org/henrikard/student/resources/javax.json.jar:org/henrikard/student/resources/sqlite-jdbc-3.8.11.2.jar -DformatsXML=formats.xml org.henrikard.student.main.Main xml
