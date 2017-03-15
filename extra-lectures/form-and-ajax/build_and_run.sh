@@ -1,0 +1,1 @@
+javac -cp .:servlet-api.jar:webroot/WEB-INF/lib/* webroot/WEB-INF/classes/student/servlets/DataServlet.java webroot/WEB-INF/classes/HintServlet.java webroot/WEB-INF/classes/org/ux/*.java && java -jar jenkins-winstone-0.9.10-jenkins-47.jar --webroot=webroot

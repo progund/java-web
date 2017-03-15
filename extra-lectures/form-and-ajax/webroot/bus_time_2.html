@@ -1,0 +1,75 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+function showMsg() {
+    var stop=document.getElementById("stop").value;
+    var dir=document.querySelector('input[name="dir"]:checked').value;
+    //var dirs=document.getElementsByName("dir").value;
+    //var dir;
+/*
+    for (var i = 0, length = dirs.length; i < length; i++) {
+    if (dirs[i].checked) {
+        dir=dirs[i].value;
+        break;
+    }
+*/
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("message").innerHTML = xmlhttp.responseText;
+      }
+    };
+    xmlhttp.open("GET", "/nextbus?direction="+dir+"&stop_id="+stop, true);
+    xmlhttp.send();
+}
+</script>
+<style type="text/css">
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell;}
+input { display: table-cell; margin: 2px;}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<form>
+<p>
+<select id="stop" name="stop">
+<option selected="true" value="0">H&ouml;gsboh&ouml;jd</option>
+<option value="1">Marklandsgatan</option>
+<option value="2">Sahlgrenska</option>
+<option value="3">Chalmers</option>
+<option value="4">Kapellplatsen</option>
+<option value="5">Vasaplatsen</option>
+<option value="6">Domkyrkan</option>
+<option value="7">Brunnsparken</option>
+<option value="8">Nordstan</option>
+<option value="9">Frihamnen</option>
+<option value="10">Pumpgatan</option>
+<option value="11">Regnb&aring;gsgatan</option>
+<option value="12">Lindholmen</option>
+<option value="13">Port Arthur</option>
+<option value="14">Sanneg&aring;rden</option>
+<option value="15">Eriksberg</option>
+<option value="16">Danaplatsen</option>
+<option value="17">Coop</option>
+<option value="18">Lundby gamla kyrka</option>
+<option value="19">Eketr&auml;gatan</option>
+</select>
+</p>
+<p>
+<label>Mot Eketr&auml;gatan</label><input id="dir" name="dir" type="radio" value="1" checked="true"/>
+</p>
+<p>
+<label>Mot H&ouml;gsbo</label><input id="dir" name="dir" type="radio" value="2"/>
+</p>
+</form>
+<p>
+<input type="submit" value="Next bus?" onClick="showMsg()" />
+</p>
+<p>
+Time to next bus:
+<div id="message">&nbsp;</div>
+</p>
+</body>
+</html>

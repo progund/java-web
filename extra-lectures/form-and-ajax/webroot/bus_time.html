@@ -1,0 +1,40 @@
+<html><head><script type="text/javascript">
+function showMsg() {
+    var stop=document.getElementById("stop").value;
+    var dir=document.getElementById("dir").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("message").innerHTML = xmlhttp.responseText;
+      }
+    };
+    xmlhttp.open("GET", "/nextbus?direction="+dir+"&stop_id="+stop, true);
+    xmlhttp.send();
+}
+</script>
+<style type="text/css">
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell;}
+input { display: table-cell; margin: 2px;}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<form>
+<p>
+<label>Bus stop id (0-19)</label><input type="text" size="3" id="stop" /><br />
+</p>
+<p>
+<label>Direction (1 or 2)</label><input type="text" size="3" id="dir" />
+</p>
+</form>
+<p>
+Time to next bus:
+<div id="message">&nbsp;</div>
+</p>
+<p>
+<input type="submit" value="GetMessage" onClick="showMsg()" />
+</p>
+</body>
+</html>

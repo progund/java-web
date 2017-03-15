@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Student-grej</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <p>
+      Try the dataservlet from a web form (enter either json or csv).
+    </p>
+    <form action="/dataservlet" method="GET">
+      <p>
+      <label for="format">Format:</label> <input type="text" name="format" id="format" size="20" />
+      <br>
+      <input type="submit" value="Get it">
+      </p>
+    </form>
+  <!-- webroot/bus_time_2.html  webroot/bus_time.html  webroot/hint.html -->
+    <ul>
+      <li><a href="hint.html">Hint example with Ajax</a></li>
+      <li><a href="bus_time.html">Simple bus time table example with Ajax</a></li>
+      <li><a href="bus_time_2.html">Bus time with drop-down example with Ajax</a></li>
+    </ul>
+  </body>
+</html>
