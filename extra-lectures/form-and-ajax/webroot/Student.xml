@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<STUDENTS>
+  <STUDENT id="1">
+    <NAME>Anders Andersson</NAME>
+  </STUDENT>
+  <STUDENT id="2">
+    <NAME>Beata Bengtsson</NAME>
+  </STUDENT>
+  <STUDENT id="3">
+    <NAME>Charlie Christensen</NAME>
+  </STUDENT>
+  <STUDENT id="4">
+    <NAME>Dick Dale</NAME>
+  </STUDENT>
+  <STUDENT id="5">
+    <NAME>Edward Eriksson</NAME>
+  </STUDENT>
+</STUDENTS>
