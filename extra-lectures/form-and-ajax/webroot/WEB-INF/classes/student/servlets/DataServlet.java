@@ -1,4 +1,5 @@
 package student.servlets;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -6,8 +7,8 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonWriter;
 
-public class DataServlet extends HttpServlet{
-  public void init() throws ServletException{
+public class DataServlet extends HttpServlet {
+  public void init() throws ServletException {
     // Do initiation here...
   }
 
@@ -22,7 +23,8 @@ public class DataServlet extends HttpServlet{
       response.setContentType("text/csv");
       writeCSV(page);
     }else if(format!=null && format.equals("xml")){
-      response.setContentType("application/xml");
+      response.setContentType("application/xml;charset=UTF-8");
+      //response.setCharacterEncoding("UTF-8");
       writeXML(page);
     }else if(format==null){
       response.setContentType("text/html");
@@ -34,17 +36,11 @@ public class DataServlet extends HttpServlet{
     PrintWriter out = response.getWriter();
     out.println(page);
     out.flush();
-    /* Set the content length to the
-     * length of the stringbuilder
-     * plus the additional newline
-     * from println:
-     */
-    //response.setContentLength(page.length()+1);
   }
   private void writeXML(StringBuilder page){
     page.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n")
       .append("<address>\n")
-      .append(" <first-name>Hanky</first-name>\n")
+      .append(" <first-name>Hänky</first-name>\n")
       .append(" <last-name>Sandycleavage</last-name>\n")
       .append(" <age>65</age>\n")
       .append(" <street-address>Skidrow 88</street-address>\n")
