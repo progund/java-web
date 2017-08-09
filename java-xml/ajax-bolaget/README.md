@@ -10,3 +10,5 @@ with this directory as the web root on localhost:8000
 
 Navigate to http://localhost:8000/bolaget.html in order to test
 the AJAX call included in the HTML page ```bolaget.html```.
+
+The XML file was obtained from https://www.systembolaget.se/api/ .
