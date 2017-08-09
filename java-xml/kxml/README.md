@@ -1,3 +1,5 @@
+This small example shows how to use ```XmlPullParser```
+
 kXML jar file was downloaded from https://sourceforge.net/projects/kxml/
 
 License
