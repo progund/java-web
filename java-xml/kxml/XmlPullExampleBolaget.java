@@ -105,6 +105,19 @@ public class XmlPullExampleBolaget {
       for (int i = 0; i < 100; i++) {
         System.out.println(products.get(i));
       }
+      Comparator<Product> nameCaseInsensitive = (p1, p2) ->
+        p1.name().toLowerCase().compareTo(p2.name().toLowerCase());
+      System.out.println("============\nReversed Caseinsensitive name sort:");
+      Collections.sort(products, nameCaseInsensitive.reversed());
+      for (int i = 0; i < 100; i++) {
+        System.out.println(products.get(i));
+      }
+      System.out.println("============\nReversed Alcohol, then Caseinsensitive name sort:");
+      Collections.sort(products, reversedAlco.thenComparing(nameCaseInsensitive));
+      for (int i = 0; i < 100; i++) {
+        System.out.println(products.get(i));
+      }
+      
     } catch (XmlPullParserException e) {
       e.printStackTrace();
     } catch (FileNotFoundException fnfe) {
