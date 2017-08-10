@@ -81,7 +81,6 @@ public class XmlPullExampleBolaget {
           // Ignore all other tags
           //System.out.println("Ignoring: " + parser.getName());
           parser.nextText();
-          continue;
         }
       }
       System.out.println("============\nName sort:");
@@ -117,7 +116,7 @@ public class XmlPullExampleBolaget {
       for (int i = 0; i < 100; i++) {
         System.out.println(products.get(i));
       }
-      
+      System.out.println("Size of list: " + products.size());
     } catch (XmlPullParserException e) {
       e.printStackTrace();
     } catch (FileNotFoundException fnfe) {
