@@ -1,0 +1,16 @@
+{
+  "firstName": "Hanky",
+  "lastName": "Sandycleavage",
+  "age": 65,
+  "streetAddress": "Skidrow 88",
+  "State": "APA",
+  "postalCode": "66613",
+  "phoneNumbers": [
+    {
+      "Mobile": "08sdfs"
+    },
+    {
+      "Home": "031.1231"
+    }
+  ]
+}
