@@ -85,6 +85,10 @@ public class BolagetStaXParser {
           EndElement endElement = event.asEndElement();
           if (endElement.getName().getLocalPart().equals(PRODUCT)) {
             System.out.println(name + " " + price + " sek " + alcohol + " " + volume + " ml");
+            products.add(new Product(name,
+                                     Double.parseDouble(alcohol.substring(0, alcohol.length()-1)),
+                                     Double.parseDouble(price),
+                                     (int)Double.parseDouble(volume)));
           }
         }
       }
@@ -94,6 +98,7 @@ public class BolagetStaXParser {
       e.printStackTrace();
     }
     // Print the list
+    System.out.println(products.size() + " products in the list.");
   }
   
 }
