@@ -1,0 +1,1 @@
+cat schedules.json | jq  '[.[]|select(.date=="2018-01-16 08:00:00")]' > 2018-01-16.json
