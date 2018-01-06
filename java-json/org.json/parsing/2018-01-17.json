@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2018-01-17 08:00:00",
+    "substitute": {
+      "name": "Rikard"
+    },
+    "school": {
+      "school_name": "Yrgo",
+      "address": "Lärdomsgatan 3 402 72 GÖTEBORG"
+    }
+  },
+  {
+    "date": "2018-01-17 08:00:00",
+    "substitute": {
+      "name": "Henrik"
+    },
+    "school": {
+      "school_name": "Yrgo",
+      "address": "Lärdomsgatan 3 402 72 GÖTEBORG"
+    }
+  },
+  {
+    "date": "2018-01-17 08:00:00",
+    "substitute": {
+      "name": "Anders"
+    },
+    "school": {
+      "school_name": "Angeredsgymnasiet",
+      "address": "Grepgatan 9 424 65 Angered"
+    }
+  }
+]
