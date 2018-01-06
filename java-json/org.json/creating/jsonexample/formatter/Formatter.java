@@ -10,8 +10,6 @@ import jsonexample.domain.Substitute;
 
 public class Formatter {
 
-  private static final String JSON_FILE = "2018-01-17.json";
-
   private static JSONObject JSONSchedule(Schedule schedule) {
     JSONObject JSONSchedule = new JSONObject();
     JSONSchedule.put("date", schedule.date());
@@ -26,7 +24,6 @@ public class Formatter {
   }
   
   public static String format(List<Schedule> schedules) {
-
     JSONArray JSON = new JSONArray();
     for (Schedule schedule : schedules) {
       JSON.put(JSONSchedule(schedule));
