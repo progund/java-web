@@ -1,0 +1,42 @@
+[
+    {
+        "date" : "2018-01-15 08:00:00",
+        "substitute" : {
+            "name" : "Rikard"
+        },
+        "school" : {
+            "school_name" : "Yrgo",
+            "address" : "Lärdomsgatan 3 402 72 GÖTEBORG"
+        }
+    },
+    {
+        "date" : "2018-01-16 08:00:00",
+        "substitute" : {
+            "name" : "Rikard"
+        },
+        "school" : {
+            "school_name" : "Yrgo",
+            "address" : "Lärdomsgatan 3 402 72 GÖTEBORG"
+        }
+    },
+    {
+        "date" : "2018-01-17 08:00:00",
+        "substitute" : {
+            "name" : "Rikard"
+        },
+        "school" : {
+            "school_name" : "Yrgo",
+            "address" : "Lärdomsgatan 3 402 72 GÖTEBORG"
+        }
+    },
+    {
+        "date" : "2018-01-18 08:00:00",
+        "substitute" : {
+            "name" : "Rikard"
+        },
+        "school" : {
+            "school_name" : "ITHS",
+            "address" : "Ebbe Lieberathsgatan 18 c 412 65 Göteborg"
+        }
+    }
+]
