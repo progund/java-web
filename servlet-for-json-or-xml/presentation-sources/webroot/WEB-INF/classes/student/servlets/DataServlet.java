@@ -1,45 +1,45 @@
 package student.servlets;
 import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonWriter;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-public class DataServlet extends HttpServlet{
-  public void init() throws ServletException{
+public class DataServlet extends HttpServlet {
+
+  public void init() throws ServletException {
     // Do initiation here...
   }
-  public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+  
+  public void doGet(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+    
     StringBuilder page = new StringBuilder(253);
     String format = request.getParameter("format");
-    if(format!=null && format.equals("json")){
+    if (format != null && format.equals("json")) {
       response.setContentType("application/json");
       writeJSON(page);
-    }else if(format!=null && format.equals("csv")){
+    } else if (format != null && format.equals("csv")) {
       response.setContentType("text/csv");
       writeCSV(page);
-    }else if(format!=null && format.equals("xml")){
+    } else if (format != null && format.equals("xml")) {
       response.setContentType("application/xml");
       writeXML(page);
-    }else if(format==null){
+    } else if (format == null) {
       response.setContentType("text/html");
       page.append("<html><body><h1>Missing parameter: format</h1></body></html>");
-    }else{
+    } else {
       response.setContentType("text/html");
       page.append("<html><body><h1>Unknown format: "+format+"</h1></body></html>");
     }
+    
     PrintWriter out = response.getWriter();
     out.println(page);
-    out.flush();
-    /* Set the content length to the
-     * length of the stringbuilder
-     * plus the additional newline
-     * from println:
-     */
-    //response.setContentLength(page.length()+1);
+    out.close();
   }
-  private void writeXML(StringBuilder page){
+  
+  private void writeXML(StringBuilder page) {
     page.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n")
       .append("<address>\n")
       .append(" <first-name>Hanky</first-name>\n")
@@ -53,7 +53,8 @@ public class DataServlet extends HttpServlet{
       .append(" </phone-numbers>\n")
       .append("</address>\n");
   }
-  private void writeJSON(StringBuilder page){
+  
+  private void writeJSON(StringBuilder page) {
     StringWriter writer = new StringWriter();
     JsonWriter jWriter = Json.createWriter(writer);
     JsonObject jo = Json.createObjectBuilder()
@@ -73,11 +74,14 @@ public class DataServlet extends HttpServlet{
     jWriter.close();
     page.append(writer.toString());
   }
-  private void writeCSV(StringBuilder page){
+  
+  private void writeCSV(StringBuilder page) {
     page.append("firstName,lastName,age,streetAddress,State,postalCode,Mobile,Home\n");
     page.append("Hanky,Sandycleavage,65,Skidrow 88,VGR,66613,0700123321,031-90 51 06");
   }
-  public void destroy(){
+  
+  public void destroy() {
     // cleanup etc here...
   }
+  
 }
