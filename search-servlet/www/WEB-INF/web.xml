@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>search-servlet</servlet-name>
+    <servlet-class>se.itu.web.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>search-servlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <filter-name>force-encoding-filter</filter-name>
+    <filter-class>se.itu.web.Utf8Filter</filter-class>
+    <init-param>
+      <param-name>Content-Type</param-name>
+      <param-value>text/html;charset=utf-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>force-encoding-filter</filter-name>
+    <url-pattern>*.html</url-pattern>
+  </filter-mapping> 
+</web-app>
