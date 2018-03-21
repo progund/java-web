@@ -55,8 +55,10 @@ public class SearchServlet extends HttpServlet {
     try (DirectoryStream<Path> dir =
          Files.newDirectoryStream(root, "*.html")) {
       for (Path file : dir){
-        if (Files.lines(file).anyMatch(line -> line.toLowerCase()
-                                       .contains(searchWord.toLowerCase()))) {
+        if (Files
+            .lines(file)
+            .anyMatch(line ->
+                      line.toLowerCase().contains(searchWord.toLowerCase()))) {
                        results.append("<a href=\"");
                        results.append(file.getFileName());
                        results.append("\">");
