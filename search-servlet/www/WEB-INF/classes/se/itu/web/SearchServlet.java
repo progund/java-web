@@ -45,7 +45,7 @@ public class SearchServlet extends HttpServlet {
 
   private String getSearchResultsHtml(String searchWord) {
 
-    if (searchWord == null||searchWord.equals("")) {
+    if (searchWord == null || searchWord.equals("")) {
       return "No search word given";
     }
 
