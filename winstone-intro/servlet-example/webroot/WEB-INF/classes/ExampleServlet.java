@@ -8,10 +8,11 @@ import java.io.IOException;
 public class ExampleServlet extends HttpServlet{
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException{
-    PrintWriter out =
-      new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
-                                             UTF_8), true);
+    throws ServletException, IOException {
+
+    response.setCharacterEncoding(UTF_8.name());
+    PrintWriter out = response.getWriter();
+
     out.println("<html><head><title>Example servlet</title></head>");
     out.println("<body><p>Hello from a servlet!</body>");
     out.println("</html>");
