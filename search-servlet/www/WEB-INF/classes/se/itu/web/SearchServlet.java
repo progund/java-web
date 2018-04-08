@@ -1,14 +1,13 @@
 package se.itu.web;
 
+import java.io.*; // IOException, BufferedReader, File...
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.file.*; //Files, Paths;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import java.io.*; // IOException, BufferedReader, File...
-import java.nio.file.*; //Files, Paths;
-
 
 public class SearchServlet extends HttpServlet {
 
@@ -21,16 +20,17 @@ public class SearchServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+    
     request.setCharacterEncoding(UTF_8.name());
     response.setContentType("text/html;charset="+UTF_8.name());
-    PrintWriter out =
-      new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
-                                             UTF_8), true);
-    out.println("<!DOCTYPE html>");
-    out.println("<html lang=\"en\">");
-    out.println("<head><title>SearchResults</title></head>");
-    out.println("<body>");
-    out.println("<h1>Results</h1>");
+    response.setCharacterEncoding(UTF_8.name());
+    PrintWriter out = response.getWriter();
+
+    out.println("<!DOCTYPE html>\n");
+    out.println("<html lang=\"en\">\n");
+    out.println("<head><title>SearchResults</title></head>\n");
+    out.println("<body>\n");
+    out.println("<h1>Results</h1>\n");
 
     String searchWord = request.getParameter("search_word");    
     String results = getSearchResultsHtml(searchWord);
@@ -39,7 +39,7 @@ public class SearchServlet extends HttpServlet {
     }
     
     out.println(results);
-    out.println("</body>");
+    out.println("\n</body>\n");
     out.println("</html>");
   }
 
