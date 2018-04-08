@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -12,28 +13,31 @@ public class DBServlet extends HttpServlet {
     try {
       Class.forName("org.sqlite.JDBC");
     } catch (ClassNotFoundException cnfe) {
-      System.err.println("Could not load driver: "+cnfe.getMessage());
+      System.err.println("Could not load driver: " + cnfe.getMessage());
     }
   }
   
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-    
-    PrintWriter out =
-      new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
-                                             UTF_8), true);
+
+    response.setCharacterEncoding(UTF_8.name());
+    PrintWriter out = response.getWriter();
+
     out.println("<html><head><title>Example servlet</title></head>");
     out.println("<body>");
 
     try {
+
       Connection con = DriverManager.getConnection("jdbc:sqlite:students.db");
       Statement stm = con.createStatement();
       ResultSet rs = stm.executeQuery("SELECT name FROM students");
-      while(rs.next()){
+
+      while (rs.next()) {
         out.print(rs.getString("name"));
         out.println("<br />");
       }
+
     } catch (SQLException sqle) {
       out.println("Database error: " + sqle.getMessage());
     }
