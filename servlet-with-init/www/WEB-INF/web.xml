@@ -6,7 +6,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   <servlet>
     <init-param>
       <param-name>language</param-name>
-      <param-value>BLA</param-value>
+      <param-value>SW</param-value>
     </init-param>
     <servlet-name>time</servlet-name>
     <servlet-class>TimeServlet</servlet-class>
