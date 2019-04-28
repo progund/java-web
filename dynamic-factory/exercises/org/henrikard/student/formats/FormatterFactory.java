@@ -18,7 +18,7 @@ public class FormatterFactory {
       formats.loadFromXML(new FileInputStream(formatsXML));
       for (String format : formats.stringPropertyNames()) {
         String className = formats.getProperty(format); 
-        System.out.println(format +
+        System.err.println(format +
                            " formatter found, loading class: " +
                            className);
         try {

@@ -25,7 +25,8 @@ public class Main {
       StudentStorage storage = StudentStorageFactory.getStorage();
       List<Student> students = storage.getAllStudents();
       formatter.loadFromList(students);
-      System.out.println("All students as " +
+      // Print to stderr, so that we don't pollute the data
+      System.err.println("All students as " +
                          formatter.getContentType() +
                          ":");
       System.out.println(formatter.getDocument());
