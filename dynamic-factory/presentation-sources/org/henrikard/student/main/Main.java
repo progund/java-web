@@ -25,7 +25,7 @@ public class Main {
       StudentStorage storage = StudentStorageFactory.getStorage();
       List<Student> students = storage.getAllStudents();
       formatter.loadFromList(students);
-      System.out.println("All students as " +
+      System.err.println("All students as " +
                          formatter.getContentType() + ":");
       System.out.println(formatter.getDocument());
     } catch (FormatNotSupportedException fnse) {
